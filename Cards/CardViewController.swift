@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CardViewController.swift
 //  Cards
 //
 //  Created by Shane Qi on 7/19/16.
@@ -14,7 +14,7 @@ class CardViewController: UIViewController {
 	
 	var focusedCard = 4
 	
-	let redPrimary = UIColor(red: 244/255, green: 67/255, blue: 54/255, alpha: 1)		// d32f2f
+	let redPrimary = UIColor(red: 244/255, green: 67/255, blue: 54/255, alpha: 1)		// D32F2F
 	let indigoPrimary = UIColor(red: 63/255, green: 81/255, blue: 181/255, alpha: 1)	// 3F51B5
 	let greenPrimary = UIColor(red: 76/255, green: 175/255, blue: 80/255, alpha: 1)		// 4CAF50
 	let orangePrimary = UIColor(red: 255/255, green: 152/255, blue: 0/255, alpha: 1)	// FF9800
@@ -26,7 +26,7 @@ class CardViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		cardTableView.registerNib(UINib(nibName: "CardCell", bundle: nil), forCellReuseIdentifier: CardCell.identifier)
+		cardTableView.registerNib(UINib(nibName: CardCell.nibName, bundle: nil), forCellReuseIdentifier: CardCell.identifier)
 	}
 
 }
@@ -40,7 +40,6 @@ extension CardViewController: UITableViewDataSource {
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCellWithIdentifier(CardCell.identifier)! as! CardCell
 		if focusedCard == indexPath.row { cell.zoom(.In) }
-		else { cell.zoom(.Out) }
 		cell.cardContent.backgroundColor = colors[indexPath.row]
 		return cell
 	}
@@ -66,8 +65,7 @@ extension CardViewController: UITableViewDelegate {
 	
 	func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
 		if indexPath == tableView.indexPathsForVisibleRows?.last {
-			tableView.visibleCells.forEach({ $0.superview?.bringSubviewToFront($0) })
-			cell.superview?.bringSubviewToFront(cell)
+			(tableView.visibleCells + [cell]).forEach({ $0.superview?.bringSubviewToFront($0) })
 		}
 	}
 	

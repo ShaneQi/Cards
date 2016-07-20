@@ -15,7 +15,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jWi-2c-Trq">
-                        <rect key="frame" x="8" y="0.0" width="308" height="200"/>
+                        <rect key="frame" x="16" y="0.0" width="292" height="200"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="200" id="ct3-eV-VaN"/>
@@ -23,7 +23,7 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="jWi-2c-Trq" firstAttribute="width" secondItem="3Za-UT-HTd" secondAttribute="width" constant="-16" id="CYW-DT-HSu"/>
+                    <constraint firstItem="jWi-2c-Trq" firstAttribute="width" secondItem="3Za-UT-HTd" secondAttribute="width" constant="-32" id="CYW-DT-HSu"/>
                     <constraint firstItem="jWi-2c-Trq" firstAttribute="centerX" secondItem="3Za-UT-HTd" secondAttribute="centerX" id="ElW-jP-bGo"/>
                     <constraint firstAttribute="top" secondItem="jWi-2c-Trq" secondAttribute="top" id="UVR-i9-yHM"/>
                 </constraints>

@@ -11,6 +11,7 @@ import UIKit
 class CardCell: UITableViewCell {
 
 	static let identifier = "CardCell"
+	static let nibName = "CardCell"
 	
 	@IBOutlet var cardContent: UIView!
 	@IBOutlet var cardContentWidth: NSLayoutConstraint!
@@ -19,9 +20,6 @@ class CardCell: UITableViewCell {
 		cardContent.layer.cornerRadius = 5
 		self.backgroundColor = UIColor.clearColor()
 		self.clipsToBounds = false
-		let clearView = UIView()
-		clearView.backgroundColor = UIColor.clearColor()
-		self.selectedBackgroundView? = clearView
 		self.layer.masksToBounds = false
 		self.layer.shadowOffset = CGSizeMake(0, -1)
 		self.layer.shadowRadius = 5
